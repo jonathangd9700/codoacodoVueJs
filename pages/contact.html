@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="../images/logos/logomoruk.jpg">
+    <title>Moruk - Contacto</title>
+</head>
+<body>
+    <div class="container__grid">
+        <header>
+            <nav>
+                <div class="container__nav--menu">
+                    <ul>
+                        <a href="../index.html"><li>Inicio</li></a>
+                        <a href="./productos.html"><li>Guardapolvos</li></a>
+                        <a href="aboutme.html"><li>Quienes somos?</li></a>
+                        <a href="./contact.html"><li  class="menu__nav--li-sombreado">Contacto</li></a>
+                        <li><label for="input-buscar"></label></li>
+                        <input type="search" placeholder="Buscar..." id="input-buscar" name="input-buscar"> 
+                        <button type="submit" id="input-buscar"><i class="fa-solid fa-magnifying-glass"></i></button></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+                        <!-- FORMULARIO DE CONTACTO -->
+                        <h1 class="py-2 mt-3">Contacto</h1>
+                        <section>
+                            <h2 class="py-3 mt-3">Dejanos tus datos asi nos contactamos con VOS!</h2>
+                            <form action="">
+                                <div class="container my-3">
+                                    <div class="row justify-content-md-between">
+                                        <div class="row col-12 col-md-6">
+                                            <label for="input-nombre"></label>
+                                                <input type="text" class="form-control my-2 input_style" placeholder="Ingrese su nombre" aria-label="Ingrese su nombre" id="input-nombre">
+                                            <label for="input-apellido"></label>
+                                                <input type="text" class="form-control my-2 input_style" placeholder="Ingrese su apellido" aria-label="Ingrese su apellido" id="input-apellido">
+                                            <label for="input-email"></label>
+                                                <input type="email" class="form-control my-2 input_style" placeholder="nombre@ejemplo.com" aria-label="Ingrese su email" id="input-email">
+                                            <label for="input-telefono"></label>
+                                                <input type="tel" class="form-control my-2 input_style" placeholder="Cod Area. + 12345678"  id="input-telefono">
+                                            <label for="select-genero">Escoja su genero:</label>    
+                                                <select name="genero" id="opcionesGenero" class="form-control my-2 input_style">
+                                                    <option value="femenino">Femenino</option>
+                                                    <option value="masculino">Masculino</option>
+                                                    <option value="sinEspecificar" selected>Sin espeficar...</option> 
+                                                </select>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <textarea class="form-control" name="contact__consulta" id="contactoConsulta" cols="50" rows="10" placeholder="Escriba su consulta" maxlength="300"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="d-flex justify-content-center">
+                                            <input type="submit" id="btnEnviar" class="my-3" id="btn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+        </main>
+        <footer>
+            <div class="container__footer">
+                <div class="container__footer--img">
+                    <strong><p>Visita nuestras redes!</p></strong>
+                    <a href="https://www.instagram.com/moruk.ok/" target="_blank"><img src="../images/logos/instagramlogo.png" alt="instagramlogo"></a>
+                    <a href="https://web.whatsapp.com/" target="_blank"><img src="../images/logos/whatsapplogo.png" alt="whatsapplogo"></a>
+                    <a href="https://espanol.yahoo.com/?p=us" target="_blank"></a><img src="../images/logos/yahoologo.png" alt="yahoologo"></a>
+                </div>
+                <div class="container__footer--txt">
+                   <strong><p>Contactenos!</p></strong>
+                    <strong><p>Contacto:123456</p></strong>
+                    <strong><p>Email: example@yahoo.com</p></strong>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="../JavaScript/contacto.js"></script>
+</body>
+</html>

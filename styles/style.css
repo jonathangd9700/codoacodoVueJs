@@ -115,7 +115,7 @@ a{
     width: 50px;
 
 }
-.container__productos{
+.container{
     display: flex;
     width: 100%;
     height: 100%;
@@ -123,14 +123,14 @@ a{
     object-fit: contain;
     align-items: center;
 }
-.container__productos--imgbtn{
+.containerProductos{
     display: flex;
     flex-direction: column;
     object-fit: contain;
     margin-bottom: 20px;
     transition: box-shadow 200ms ease-in 200ms, transform 150ms ease-in;
 }
-.container__productos img:hover {
+.container img:hover {
     transform: scale(.9);
     justify-content: center;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.644);
@@ -148,7 +148,7 @@ a{
     margin-top: 3px;
 }
 @media(min-width: 480px){
-    .container__productos{
+    .container, .carrito{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -164,7 +164,7 @@ a{
         margin-right: 10px;
         transition: transform 300ms ease-in;
     }
-    .container__productos img{
+    .container img, .carrito img{
         width: 250px;
         margin-top: 10px;
         border: 1px solid black;

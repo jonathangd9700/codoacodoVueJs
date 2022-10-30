@@ -3,6 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer{
+    margin-top: 200px;
+}
 a{
     text-decoration: none;
     color: black;
@@ -27,9 +35,7 @@ a{
     padding: 2px;
 }
 .container__nav--menu li:hover{
-    transform: scale(1.2);
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.671); 
-    animation: transition--menu--up 300ms; 
+    transform: scale(1.1);
 }
 .menu__nav--li-sombreado{
     background-color: rgba(131, 156, 224, 0.452)
@@ -76,11 +82,15 @@ a{
 }
 .container__footer img{
     width: 40px;
+    transition: transform 250ms;
+}
+.container__footer img:hover{
+transform: scale(.85);
 }
 .container__footer--txt{
     text-align: center;
 }
-.btn-tienda{
+.btn-tienda, #btnEnviar{
     cursor: pointer;
     padding: 5px;
     margin-top: 30px;
@@ -93,6 +103,20 @@ a{
     font-weight: bold;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.671);  
 }
+
+#btnAgregar0, #btnAgregar1, #btnAgregar2, #btnAgregar3, #btnAgregar4, #btnAgregar5{
+    cursor: pointer;
+    padding: 5px;
+    background-color: #4795ee;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: Abril_Fatface;
+    border-width: 0px;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.671);  
+}
+
 #input-buscar{
     color: #fff;
     background-color:  rgb(130, 159, 240);
@@ -128,17 +152,24 @@ a{
     flex-direction: column;
     object-fit: contain;
     margin-bottom: 20px;
-    transition: box-shadow 200ms ease-in 200ms, transform 150ms ease-in;
 }
+
+.container img{
+    transition: box-shadow 200ms ease-in, transform 150ms ease-in;
+}
+
 .container img:hover {
     transform: scale(.9);
     justify-content: center;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.644);
 }
+h1{
+    color: rgba(73, 114, 226, 0.842);
+}
 .btn_guardapolvo{
     color: white;
     font-weight: bold;
-    background-color: rgba(73, 114, 226, 0.842);
+    background-color: rgba(92, 132, 241, 0.842);
     border: 1px solid black;
     padding: 2px;
     border-radius: 20px;
@@ -164,11 +195,14 @@ a{
         margin-right: 10px;
         transition: transform 300ms ease-in;
     }
-    .container img, .carrito img{
+    .container img{
         width: 250px;
-        margin-top: 10px;
         border: 1px solid black;
         
+    }
+    .carrito img{
+        width: 100px;
+        margin-top: 10px;
     }
     .container__nav--plantillas img{
         width: 120px;
@@ -196,10 +230,7 @@ a{
     }
     
 }
-@keyframes transition--menu--up{
-    from{transform: translateY(0);}
-    to{transform: translateY(-10px);}
-}
+
 .input_style{
     border-width: 0 0 1px 0;
 }

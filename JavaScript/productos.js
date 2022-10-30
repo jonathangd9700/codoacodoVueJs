@@ -1,6 +1,7 @@
 let containerProductos = document.querySelector(`.container`);
 let containerCarrito = document.querySelector(`.carrito`); 
-let carritoCompras = [];
+let totalSuma = document.getElementById(`totalSuma`);
+let carritoCompras = JSON.parse(localStorage.getItem("carrito")) || [];
 const guardapolvos = [
     {
     id: 0,
@@ -67,8 +68,15 @@ function btnAgregar() {
 }
 
 function agregarCarrito(guardapolvo){
-    carritoCompras.push(guardapolvo);
-    sumaCarrito();
+    let existe = carritoCompras.some(prod=>(prod.id===guardapolvo.id));
+    if(existe===false){
+        guardapolvo.cantidad = 1;
+        carritoCompras.push(guardapolvo);
+    }
+    else{
+        let encontrado = carritoCompras.find(prod=>(prod.id===guardapolvo.id));
+        encontrado.cantidad++;
+    }
     console.log(carritoCompras);
     mostrarCarrito();
 }
@@ -80,10 +88,13 @@ function mostrarCarrito() {
         <img src=${el.img} class="imgGuardapolvo">
         <button class="btn_guardapolvo">${el.nombre} $${el.precio}</button>
         <button id="btnEliminar${el.id}">Eliminar producto</button>
+        <h5>Cantidad: ${el.cantidad}</h5>
         </div>
         `
     })
+    localStorage.setItem("carrito",JSON.stringify(carritoCompras));
     eliminarProducto();
+    sumaCarrito();
 }
 
 function btnEliminar(){
@@ -94,16 +105,21 @@ function btnEliminar(){
     })
 }
 
-function eliminarProducto(productoCarrito){
-    carritoCompras.pop(productoCarrito);
-    sumaCarrito();
+function eliminarProducto(){
+carritoCompras.forEach(producto=>{document.querySelector(`#btnEliminar${producto.id}`).addEventListener("click",()=>{
+    let indice = carritoCompras.findIndex(e=>e.id===producto.id);
+    carritoCompras.splice(indice,1);
     mostrarCarrito();
-    
+})
+})
+
 }
 
 function sumaCarrito(){
     const valorInicial = 0;
     const sumaTotal = carritoCompras.reduce((primerValor,SegundoValor)=>primerValor+SegundoValor.precio,valorInicial);
     console.log(sumaTotal);
+    totalSuma.innerHTML=`<p>TOTAL: $${sumaTotal}</p>`;   
     return sumaTotal;
 }
+mostrarCarrito();
